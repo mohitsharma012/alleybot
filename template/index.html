@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+
+  <h1>AllyBot</h1>
+  <div>
+    <form action="user_registration" method="post">
+      {% csrf_token %}
+
+      
+      <label for="user_name">Full Name</label>
+      <input type="text" name="user_name">
+      
+      <label for="user_email">Email</label>
+      <input type="text" name="user_email">
+
+      <label for="user_pass">Pass</label>
+      <input type="password" name="user_pass">
+
+      <label for="user_cpass">CPass</label>
+      <input type="password" name="user_cpass">
+
+      <button type="submit">SignUP</button>
+      
+    </form>
+  </div>
+  <div>
+    <form action="/user_login" method="post">
+      {% csrf_token %}
+
+      
+      <label for="user_email">Email</label>
+      <input type="text" name="user_email">
+
+      <label for="user_pass">Pass</label>
+      <input type="password" name="user_pass">
+
+      <button type="submit">LogIn</button>
+
+    </form>
+  </div>
+  
+</body>
+</html>

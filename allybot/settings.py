@@ -27,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8x=$%7(k(n3d4m&yx=@c(v$9&q$z3@!*m_t#@&ci^ow$p_fzjb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['alleybot.vercel.app']
 
 
 # Load environment variables

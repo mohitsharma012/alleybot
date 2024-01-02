@@ -1,32 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AllyBot Voice Input</title>
+{% include 'partials/head.html' %}
 
-    <link rel="stylesheet" href="/static/css/style.css">
-    
-</head>
 <body>
     <div class="container">
-        <div class="">
-            <h1>Chats</h1>
-            <a href="">
+        {% include 'partials/sidebar.html' %}
 
-                <button class="listen_btn">LISTENING</button>
-            </a>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia fugit molestias repudiandae culpa cum sit, deleniti, soluta magnam voluptatum sed, vitae voluptatibus a ipsa quae voluptates. Nisi ex eaque ducimus.</p>
+        <div class="main_contant_conversations">
+            {% for message in user_messages %}
+            <div class="conversation_messgae">
+                <b>User:</b> {{ message.message_text }} <br />
+                <b>Alley:</b> {{ message.ai_response }}
+            </div>
+            {% endfor %}
         </div>
 
     </div>
-<!-- 
-    <h1>Welcome to AllyBot</h1>
-    <p> {{ user_data.user_name }}</p>
-    <p> {{ user_data.user_email }}</p>
-    <button id="start-voice-input">Start Voice Input</button>
-    <p id="voice-text"></p>
-    <p id="voice-reply"></p> -->
 
 </body>
+
 </html>

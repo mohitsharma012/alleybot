@@ -1,0 +1,34 @@
+<div id="mySidebar" class="sidebar">
+    <!-- Content of the sidebar -->
+    <a href="#" class="sidebar_user">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <h2>{{ user_data.user_name }}</h2>
+    </a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/converstaions">Previous Chats</a>
+    <a href="/about_us">About Us</a>
+    <a href="/contact_us">Contact Us</a>
+    <a href="/user_logout">LogOut</a>
+</div>
+<div id="main">
+    <button class="openbtn" id="openbtn" onclick="openNav()">☰</button>
+    <a href="javascript:void(0)" id="closebtn" class="closebtn" onclick="closeNav()">×</a>
+</div>
+
+<script>
+    // Sidebar navigation functions
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.getElementById("openbtn").style.display = "none";
+    document.getElementById("closebtn").style.display = "block";
+}
+
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("openbtn").style.display = "block";
+    document.getElementById("closebtn").style.display = "none";
+}
+
+</script>

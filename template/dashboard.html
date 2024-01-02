@@ -1,57 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AllyBot</title>
+{% include 'partials/head.html' %}
 
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
-    
-</head>
 <body>
     <div class="container">
-        <div id="mySidebar" class="sidebar">
-            <!-- Content of the sidebar -->
-            <a href="#" class="sidebar_user">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                <h2>
-                    {{ user_data.user_name }}
-                </h2>
-            </a>
-            <a href="#">Previous Chats</a>
-            <a href="#">About Us</a> 
-            <a href="#">Contact Us</a>
-            <a href="#">LogOut</a>
-        </div>
-        <div id="main">
-            <button class="openbtn" id="openbtn" onclick="openNav()">☰</button>  
-            <a href="javascript:void(0)" id="closebtn" class="closebtn" onclick="closeNav()">×</a>
+        {% include 'partials/sidebar.html' %}
 
-        </div>
+       
         <div class="main_contant_dashboard">
-            <h1>AllyBot</h1>
-                <!-- <button  class="listen_btn">LISTENING</button> -->
-                <button id="start-record-btn" class="listen_btn" title="Start Recording">Talk to AI Friend</button>
+            <h1>AlleyBot</h1>
+            <button id="start-record-btn" class="listen_btn" title="Start Recording">
+                Click here to talk
+            </button>
 
-<div id="transcript">Waiting for input...</div>
-
-
-
+            <div id="transcript">Waiting for input...</div>
 
             <p id="ai-response">AI Response will appear here...</p>
         </div>
-
     </div>
-<!-- 
-    <h1>Welcome to AllyBot</h1>
-    <p> {{ user_data.user_name }}</p>
-    <p> {{ user_data.user_email }}</p>
-    <button id="start-voice-input">Start Voice Input</button>
-    <p id="voice-text"></p>
-    <p id="voice-reply"></p> -->
+   
 
-   <script src="/static/js/dashboard.js"></script>
+    <script src="/static/js/dashboard.js"></script>
 </body>
+
 </html>

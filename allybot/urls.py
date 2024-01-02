@@ -25,7 +25,12 @@ urlpatterns = [
     path('',index ),
     path('user_registration',user_registration),
     path('user_login',user_login),
-    path('dashboard/<int:user_id>/', dashboard, name='dashboard'),
+    path('user_logout',user_logout),
+    path('dashboard', dashboard, name='dashboard'),
     path('process_voice/', process_voice, name='process_voice'),
+    path('converstaions',conversations),
+    path('about_us',about_us),
+    path('contact_us',contact_us),
+
     # path('voice_input/',voice_input ),
 ]

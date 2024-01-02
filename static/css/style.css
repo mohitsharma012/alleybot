@@ -1,5 +1,5 @@
 #start-voice-input {
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     font-size: 16px;
     color: black;
     /* background-color: #f8f8f8; */
@@ -111,7 +111,7 @@
 /* css for the dashboard  */
 .container{
     background-color: #F0FEFF;
-    height: 100vh;
+    min-height: 100vh;
     align-content: center;
 }
 .main_contant_dashboard {
@@ -132,11 +132,53 @@
 
 .listen_btn{
     background-color: #affaffa6;
-    padding: 23vh 18vh;
+    /* padding: 23vh 18vh; */
     border: 1px solid #5CE1E6;
     border-radius: 100vh;
     margin: 5vh 0vh;
     font-size: 17px;
     color: #5ce1e6;
     cursor: pointer;
+    height: 54vh;
+    width: 56vh;
+}
+
+
+
+
+/* converstaons_page css  */
+.main_contant_conversations{
+    font-size: 18px;
+    width: 68%;
+    margin: auto;
+    padding: 10vh 0vh;
+}
+.conversation_messgae{
+    margin: 1vh 0vh;
+
+}
+
+
+/* about us page css  */
+
+.main_contant_about_us{
+    width: 73%;
+    margin: auto;
+    padding: 7vh 0vh;
+}
+
+.main_contant_about_us div {
+    margin: 3vh 0vh;
+}
+.main_contant_about_us div p{
+    font-size: 18px;
+    
+}
+.main_contant_about_us div ul li{
+    font-size: 18px;
+    
+}
+.main_contant_about_us div h3{
+    font-size: 22px;
+
 }

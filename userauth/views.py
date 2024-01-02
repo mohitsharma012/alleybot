@@ -26,19 +26,28 @@ def user_registration(request):
             print("Password Did not match")
     return redirect(index)
 
+# function to login user
 def user_login(request):
     if request.method == 'POST':
         # get data from form 
         user_email = request.POST.get('user_email')
         user_pass = request.POST.get('user_pass')
         # get data from database to check login details 
-        data_email = users.objects.get(user_email=user_email)
+        if users.objects.filter(user_email=user_email).exists():
+            data_email = users.objects.get(user_email=user_email)
         
-        if user_pass == data_email.user_pass :
-            return redirect(dashboard,user_id=data_email.user_id)
+            if user_pass == data_email.user_pass :
+                request.session['user_id'] = data_email.user_id  # Store user_id in session
+                return redirect(dashboard)
+            else:
+                print("email id or password did't match")
+                return redirect(index)
         else:
-            print("email id or password did't match")
+            print("no user found ")
             return redirect(index)
 
-    
+# this is an logout function 
+def user_logout(request):
+    request.session.flush()  # Clear the session
+    return redirect(index)
 

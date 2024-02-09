@@ -20,6 +20,9 @@ from allybot.views import *
 from userauth.views import *
 from dashboard.views import process_voice
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index ),
@@ -33,4 +36,4 @@ urlpatterns = [
     path('contact_us',contact_us),
 
     # path('voice_input/',voice_input ),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

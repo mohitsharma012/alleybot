@@ -2,91 +2,89 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
 
-  <link rel="stylesheet" type="text/css" href="{% static 'css/signin-signup-css.css' %}">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/signin-signup-css.css' %}"
+    />
+  </head>
+  <body>
 
-
-</head>
-<body>
-
-
-
-  <h1>AllyBot</h1>
-  <div>
-    <form action="user_registration" method="post">
+    <form id="signup_form_screen" action="user_registration" method="post" style="display: none" class="form">
       {% csrf_token %}
 
-      
-      <label for="user_name">Full Name</label>
-      <input type="text" name="user_name">
-      
-      <label for="user_email">Email</label>
-      <input type="text" name="user_email">
+      <p class="title">Register</p>
+      <p class="message">Signup now and get full access to our app.</p>
 
-      <label for="user_pass">Pass</label>
-      <input type="password" name="user_pass">
+      <label>
+        <input required=""  name="user_name" placeholder="" type="text" class="input" />
+        <span>Name</span>
+      </label>
 
-      <label for="user_cpass">CPass</label>
-      <input type="password" name="user_cpass">
-
-      <button type="submit">SignUP</button>
-      
-    </form>
-  </div>
-  <div>
-    <form action="/user_login" method="post">
-      {% csrf_token %}
-
-      
-      <label for="user_email">Email</label>
-      <input type="text" name="user_email" value="stayer.mohit@gmail.com">
-
-      <label for="user_pass">Pass</label>
-      <input type="password" name="user_pass" value="123">
-
-      <button type="submit">LogIn</button>
-
-    </form>
-  </div>
-  
-  <form class="form">
-    <p class="title">Register </p>
-    <p class="message">Signup now and get full access to our app. </p>
-        <div class="flex">
-        <label>
-            <input required="" placeholder="" type="text" class="input">
-            <span>Firstname</span>
-        </label>
-
-        <label>
-            <input required="" placeholder="" type="text" class="input">
-            <span>Lastname</span>
-        </label>
-    </div>  
-            
-    <label>
-        <input required="" placeholder="" type="email" class="input">
+      <label>
+        <input required="" name="user_email" placeholder="" type="email" class="input" />
         <span>Email</span>
-    </label> 
-        
-    <label>
-        <input required="" placeholder="" type="password" class="input">
+      </label>
+
+      <label>
+        <input required="" name="user_pass" placeholder="" type="password" class="input" />
         <span>Password</span>
-    </label>
-    <label>
-        <input required="" placeholder="" type="password" class="input">
+      </label>
+
+      <label>
+        <input required="" name="user_cpass" placeholder="" type="password" class="input" />
         <span>Confirm password</span>
-    </label>
-    <button class="submit">Submit</button>
-    <p class="signin">Already have an acount ? <a href="#">Signin</a> </p>
-</form>
+      </label>
 
+      <button id="signup_submit_btn" class="submit">Submit</button>
+      <p class="signin">
+        Already have an acount ?
+        <button onclick="change_to_signin()" style="background-color: transparent; border: none; cursor: pointer">Signin</button>
+      </p>
+    </form>
 
+    <form id="signin_form_screen" action="/user_login" method="post" class="form">
+      {% csrf_token %}
 
+      <p class="title">Login</p>
+      <p class="message">Signin now to access to our app.</p>
+      <label>
+        <input required="" name="user_email" value="stayer.mohit@gmail.com" placeholder="" type="email" class="input" />
+        <span>Email</span>
+      </label>
 
-</body>
+      <label>
+        <input required="" placeholder="" name="user_pass" value="123" type="password" class="input" />
+        <span>Password</span>
+      </label>
+      <button id="signup_submit_btn" class="submit">Submit</button>
+      <p class="signin">
+        Don't have an acount ?
+        <button
+          onclick="change_to_signup()"
+          style="background-color: transparent; border: none; cursor: pointer"
+        >
+          Create New Account
+        </button>
+      </p>
+    </form>
+
+    <script>
+      let signup_form_screen = document.getElementById("signup_form_screen");
+      let signin_form_screen = document.getElementById("signin_form_screen");
+      function change_to_signin() {
+        signup_form_screen.style.display = "none";
+        signin_form_screen.style.display = "block";
+      }
+      function change_to_signup() {
+        signin_form_screen.style.display = "none";
+        signup_form_screen.style.display = "block";
+      }
+    </script>
+  </body>
 </html>
